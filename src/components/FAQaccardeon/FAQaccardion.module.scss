@@ -1,0 +1,52 @@
+.accardion  {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  box-sizing: border-box;
+  padding: 18px 24px;
+  background: #FFF;
+  border: none;
+  outline:  none;
+  gap: 18px;
+
+  > span  {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #022656;
+    font-family: Raleway;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    transition: 1s;
+    > img {
+      height: 16px;
+      width: 16px;
+    }
+  }
+  > p {
+    display: none;
+    color: #022656;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    transition: 1s;
+  }
+}
+
+
+.active {
+  > p {
+    display: block;
+  }
+  > span {
+    > img {
+      transform: rotate(90deg);
+    }
+  }
+}

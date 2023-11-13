@@ -1,0 +1,172 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 16px;
+  border: 0.5px solid #FFF;
+  background: #FFF;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0px 0px 41px 0px rgba(225, 228, 232, 0.30);
+  &_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    &__title {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 17px;
+      > h3 {
+        color: #064376;
+        text-align: center;
+        font-family: 'Jura';
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+      }
+      > span {
+        box-sizing: border-box;
+        padding: 10px;
+        color: #0289B8;
+        text-align: center;
+        font-family: 'Jura';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        border-radius: 69px;
+        background: rgba(6, 67, 118, 0.20);
+        backdrop-filter: blur(50px);
+        text-wrap: nowrap;
+      }
+    }
+  }
+  > p {
+    margin-top: 10px;
+    width: 100%;
+    color: #000;
+    font-family: 'Jura';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%; /* 25.6px */
+  }
+  > address {
+    margin-top: 22px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > div {
+      display: flex;
+      gap: 10px;
+      > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      color: #012454;
+      font-family: 'Jura';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+      text-decoration: none;
+      text-wrap: nowrap;
+      > img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+    }
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width:770px) {
+.card {
+  padding: 15px;
+
+  &_top {
+    &__title {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      > h3 {
+      font-size: 22px;
+      }
+      > span {
+        padding: 6px;
+      }
+    }
+  }
+  > p {
+    margin-top: 10px;
+    width: 100%;
+    color: #000;
+    font-family: 'Jura';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%; /* 25.6px */
+  }
+  > address {
+    margin-top: 22px;
+    width: 100%;
+    display: flex;
+     gap: 10px;
+    > div {
+      gap: 10px;
+      > a {
+      font-size: 12px;
+      > img {
+        width: 23px;
+        height: 23px;
+      }
+    }
+    }
+  }
+}
+}
+
+@media screen and (max-width:540px) {
+.card {
+  padding: 15px;
+   &_top {
+    &__title {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      > h3 {
+      font-size: 22px;
+      }
+      > span {
+        padding: 6px;
+        background: none;
+      }
+    }
+  }
+  > address {
+    display: flex;
+    flex-direction: column-reverse;
+    > div {
+      width: 100%;
+      justify-content: space-around;
+      gap: 10px;
+      > a {
+      font-size: 12px;
+      > img {
+        width: 23px;
+        height: 23px;
+      }
+    }
+    }
+  }
+}
+}
