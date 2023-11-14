@@ -9,8 +9,7 @@
   const Header = () => {
     const [showAside, setShowAside] = useState(false)
     const location = useLocation()
-    const changeAside = (atr) => {
-      
+    const changeAside = () => {
       setShowAside(!showAside)
     }
 

@@ -6,6 +6,7 @@
   import contentIcon2 from '../../assets/icons/content-icon-2.svg'
   import heroAboutImage from '../../assets/images/hero-about-image.png'
   import CMbutton from '../../UI/CMbutton/CMbutton';
+  import Cbutton from '../../UI/Cbutton/Cbutton';
   import resultImage1 from '../../assets/images/results-about-1-image.png'
   import resultImage2 from '../../assets/images/results-about-2-image.png'
   import resultImage3 from '../../assets/images/results-about-3-image.png'
@@ -13,14 +14,12 @@
   import NewsCard from '../../components/NewsCard/NewsCard';
   import FAQaccardion from '../../components/FAQaccardeon/FAQaccardion';
   import AOS from 'aos'
-  import { Navigate  } from 'react-router-dom';
   import 'aos/dist/aos.css'
 
   import { API } from '../../api/index.js'
 
 
   const HomePage = () => {
-
   const [eventsList, setEventsList] = useState([])
   const [newslist, setNewsList] = useState([])
   const [faqList,setFaqList] = useState([])
@@ -75,12 +74,9 @@ console.log(process.env.REACT_APP_API, 'as')
   getNews()
   getFaq()
   AOS.init({
-    duration: 1500,
+    duration:2500,
   })
   }, [])
-
-
-
 
     return (
       <main className={styles.main}>
@@ -188,8 +184,8 @@ console.log(process.env.REACT_APP_API, 'as')
                       <CountUp
                         start={0}
                         end={isAnimated ? 20 : 0}
-                        duration={1}
-                        separator=" "
+                        duration={5}
+
                       >
                         {({ countUpRef, start }) => (
                           <div>
@@ -208,10 +204,10 @@ console.log(process.env.REACT_APP_API, 'as')
                   <span>
                     <Trigger onEnter={handleScroll}>
                       <CountUp
-                        start={25}
+                        start={0}
                         end={isAnimated ? 50 : 0}
-                        duration={1}
-                        separator=" "
+                        duration={5 }
+
                       >
                         {({ countUpRef, start }) => (
                           <span>
@@ -400,7 +396,7 @@ console.log(process.env.REACT_APP_API, 'as')
               <h2 className={styles.title}>FAQ</h2>
               <div className={styles.FAQ__accardions}>
                 {faqList.map((item) => (
-                  <FAQaccardion answer={item.answer} question={item.question} />
+                  <FAQaccardion key={item.id} answer={item.answer} question={item.question} />
                 ))}
               </div>
             </div>

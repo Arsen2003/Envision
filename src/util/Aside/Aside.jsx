@@ -8,13 +8,7 @@ const Aside = ({ showAside, changeShowAside }) => {
   const location = useLocation()
   const pathRef = useRef(location.pathname)
 
-   useEffect(() => {
-     if (pathRef.current !== location.pathname ){
-      console.log(pathRef.location)
-       changeShowAside(false )
-     }
-      pathRef.current = location.pathname
-   }, [location.pathname])
+
 
   return (
     <aside
@@ -74,7 +68,6 @@ const Aside = ({ showAside, changeShowAside }) => {
           <Link to="/vacancies">Вакансии</Link>
           <Link to="/financial-report">Финансовый отчет</Link>
           <Link to="/requisites">Реквизиты</Link>
-
         </nav>
         <div className={styles.images}>
           <img src={contentIcon1} alt="content-icon" />
