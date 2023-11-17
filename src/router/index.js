@@ -51,7 +51,7 @@ const MainRouter = () => {
           }
         />
         <Route
-          path="/requisites"
+          path = "/requisites"
           element={
             <Suspense fallback={<p>loading...</p>}>
               <RequisitesPage />
