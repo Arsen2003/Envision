@@ -6,8 +6,12 @@ import closeIcon from '../../assets/icons/close-icon.svg'
 import { Link, useLocation } from 'react-router-dom'
 const Aside = ({ showAside, changeShowAside }) => {
   const location = useLocation()
-  const pathRef = useRef(location.pathname)
 
+useEffect(() => {
+  if (showAside) {
+    changeShowAside()
+  }
+}, [location.pathname])
 
 
   return (

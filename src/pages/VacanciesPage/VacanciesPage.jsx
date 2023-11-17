@@ -12,6 +12,7 @@ const  [vanaciesList,setVanaciesList] = useState([])
       .then((response) => response.json())
       .then((data) => {
         setVanaciesList(data)
+        console.log(data)
         console.log(vanaciesList)
       })
       .catch((error) => {
@@ -22,6 +23,9 @@ const  [vanaciesList,setVanaciesList] = useState([])
   useEffect(() => {
    getEvents()
   }, [])
+    useEffect(() => {
+      console.log(vanaciesList)
+    }, [vanaciesList])
   return (
     <main className={styles.main}>
       <div className={styles.title}>
@@ -47,6 +51,7 @@ const  [vanaciesList,setVanaciesList] = useState([])
         <section className={styles.vanacies}>
           {vanaciesList.map((item) => (
             <VanaciesCard key={item.id}
+              id = {item.id}
               title={item.title}
               choices={item.choices}
               text={item.text}

@@ -2,9 +2,6 @@ import React from 'react';
 import styles from './Footer.module.scss'
 import logoIcon from '../../assets/images/logo-icon.svg'
 import { Link, useLocation } from 'react-router-dom'
-import whatsAppIcon from '../../assets/icons/whatsApp-icon.svg'
-import instargamIcon from '../../assets/icons/instagram-icon.svg'
-import emailIcon from '../../assets/icons/email-icon.svg'
 const Footer = () => {
 
       const location = useLocation()
@@ -56,7 +53,7 @@ const Footer = () => {
                     fill="#064376"
                   />
                 </svg>
-                <Link>+996 777 996 777</Link>
+                <a href="tel: +996777996777">+996777996777</a>
               </li>
               <li>
                 <svg
@@ -71,7 +68,12 @@ const Footer = () => {
                     fill="#064376"
                   />
                 </svg>
-                <Link>envision.bishkek</Link>
+                <a
+                  target="_blank"
+                  href="https://instagram.com/envision.bishkek?igshid=NzZlODBkYWE4Ng=="
+                >
+                  envision.bishkek
+                </a>
               </li>
               <li>
                 <svg
@@ -86,7 +88,9 @@ const Footer = () => {
                     fill="#064376"
                   />
                 </svg>
-                <Link>fghj@ghjkl</Link>
+                <a target="_blank" href="cf.envision.bishkek@gmail.com">
+                cf.envision.bishkek@gmail.com
+                </a>
               </li>
             </ul>
           </nav>

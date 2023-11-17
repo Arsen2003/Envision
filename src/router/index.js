@@ -11,6 +11,8 @@ const FinancialReportPage = lazy(() =>
 const VacanciesPage = lazy(() =>
   import('../pages/VacanciesPage/VacanciesPage')
 )
+const RequisitesPage = lazy(() =>
+import('../pages/RequisitesPage/RequisitesPage'))
 
 const MainRouter = () => {
   return (
@@ -48,8 +50,16 @@ const MainRouter = () => {
             </Suspense>
           }
         />
+        <Route
+          path="/requisites"
+          element={
+            <Suspense fallback={<p>loading...</p>}>
+              <RequisitesPage />
+            </Suspense>
+          }
+        />
       </Route>
-      <Route path="*" element={<NotFound/>} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 };

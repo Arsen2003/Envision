@@ -180,11 +180,12 @@
         height: 20px;
       }
     }
-    .content  {
+  }
+  .content  {
     &__logo {
       > img {
-        width: 76px;
-        height: 35px;
+        width: 56px;
+
 
       }
     }
@@ -210,6 +211,5 @@
         }
       }
     }
-  }
   }
 }

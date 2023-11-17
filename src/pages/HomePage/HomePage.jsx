@@ -1,6 +1,7 @@
   import Trigger  from 'react-scroll-trigger'
   import CountUp from 'react-countup'
   import React, { useEffect, useState } from 'react';
+  import { Helmet } from 'react-helmet'
   import styles from './HomePage.module.scss'
   import contentIcon1 from '../../assets/icons/content-icon-1.svg'
   import contentIcon2 from '../../assets/icons/content-icon-2.svg'
@@ -29,17 +30,12 @@
       setIsAnimated(true)
     }
 
-console.log(process.env.REACT_APP_API, 'as')
-
   const getEvents= () =>{
     fetch(`${API}/events`)
       .then((response) => response.json())
       .then((data) => {
-
         const lastTwoNews = data.slice(-2)
-        console.log(data,'ивенты')
         setEventsList(lastTwoNews)
-        console.log(eventsList,'as12')
       })
       .catch((error) => {
         console.error('Error fetching data:', error)
@@ -78,8 +74,31 @@ console.log(process.env.REACT_APP_API, 'as')
   })
   }, [])
 
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth <= 460) {
+          AOS.refresh() // обновляем AOS
+        }
+      }
+
+      window.addEventListener('resize', handleResize)
+
+      return () => {
+        window.removeEventListener('resize', handleResize)
+      }
+    }, [])
+
+
     return (
       <main className={styles.main}>
+        <Helmet>
+          <title>Заголовок вашей страницы</title>
+          <meta name="description" content="Описание вашей страницы" />
+          <meta
+            name="keywords"
+            content="ENVISION, благотворительная организация,Кыргызстана,помощь, социального равенство"
+          />
+        </Helmet>
         <section className={styles.hero}>
           <div className="container">
             <div className={styles.hero__content}>
@@ -127,7 +146,7 @@ console.log(process.env.REACT_APP_API, 'as')
               </h2>
               <div className={styles.about_us_cards}>
                 <div
-                  data-aos="flip-left"
+                  data-aos="fade-right"
                   className={styles.about_us_cards__title}
                 >
                   <h3>Who we are</h3>
@@ -144,7 +163,7 @@ console.log(process.env.REACT_APP_API, 'as')
                   </p>
                 </div>
                 <div
-                  data-aos="flip-right"
+                  data-aos="fade-left"
                   className={styles.about_us_cards__image}
                 >
                   <h3>ENVISION</h3>
@@ -181,12 +200,7 @@ console.log(process.env.REACT_APP_API, 'as')
                   <img src={resultImage1} alt="" />
                   <span>
                     <Trigger onEnter={handleScroll}>
-                      <CountUp
-                        start={0}
-                        end={isAnimated ? 20 : 0}
-                        duration={5}
-
-                      >
+                      <CountUp start={0} end={isAnimated ? 20 : 0} duration={5}>
                         {({ countUpRef, start }) => (
                           <div>
                             <span ref={countUpRef}></span>
@@ -203,12 +217,7 @@ console.log(process.env.REACT_APP_API, 'as')
                   <img src={resultImage2} alt="" />
                   <span>
                     <Trigger onEnter={handleScroll}>
-                      <CountUp
-                        start={0}
-                        end={isAnimated ? 50 : 0}
-                        duration={5 }
-
-                      >
+                      <CountUp start={0} end={isAnimated ? 50 : 0} duration={5}>
                         {({ countUpRef, start }) => (
                           <span>
                             <span ref={countUpRef} />
@@ -396,7 +405,11 @@ console.log(process.env.REACT_APP_API, 'as')
               <h2 className={styles.title}>FAQ</h2>
               <div className={styles.FAQ__accardions}>
                 {faqList.map((item) => (
-                  <FAQaccardion key={item.id} answer={item.answer} question={item.question} />
+                  <FAQaccardion
+                    key={item.id}
+                    answer={item.answer}
+                    question={item.question}
+                  />
                 ))}
               </div>
             </div>

@@ -22,7 +22,7 @@ const EventsCard = ({ title, image, text, location, date, link }) => {
 
 
 
-  const navigate = useNavigate()
+
   const formattedDate = formatDateTime(date)
 
   return (

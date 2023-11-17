@@ -1,12 +1,13 @@
   import React, { useState } from 'react'
   import styles from './Header.module.scss'
-  import { Link, useLocation } from 'react-router-dom'
+  import { Link, useLocation, useNavigate } from 'react-router-dom'
   import logoIcon from '../../assets/images/logo-icon.svg'
   import Cbutton from '../../UI/Cbutton/Cbutton'
   import walletIcon from '../../assets/icons/wallet-icon.svg'
   import Aside from '../Aside/Aside'
 
   const Header = () => {
+    const navigate = useNavigate()
     const [showAside, setShowAside] = useState(false)
     const location = useLocation()
     const changeAside = () => {
@@ -21,7 +22,7 @@
       >
         <div className="container">
           <div className={styles.content}>
-            <Link to='/'  className={styles.content__logo}>
+            <Link to="/" className={styles.content__logo}>
               <img src={logoIcon} alt="logo-image" />
             </Link>
             <nav>
@@ -29,13 +30,14 @@
               <Link to="/portfolio">Портфолио</Link>
               <Link to="/vacancies">Вакансии</Link>
               <Link to="/financial-report">Финансовый отчет</Link>
-
             </nav>
             <div className={styles.content__button}>
-              <Cbutton>Реквизиты</Cbutton>
+              <Cbutton onClick={() => navigate('/requisites')}>
+                Реквизиты
+              </Cbutton>
             </div>
             <div className={styles.demo_aside}>
-              <Link>
+              <Link to="/requisites">
                 <img src={walletIcon} alt="wallet-icon" />
                 Реквизиты
               </Link>

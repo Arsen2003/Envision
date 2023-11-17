@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   filter: drop-shadow(0px 0px 25.384614944458008px rgba(1, 36, 84, 0.26));
-  border-radius:25px 0px 0px 25px;
+  border-radius:25px 25px 25px 25px;
   height: 650px;
   padding:20px 85px;
   overflow-y: scroll;
@@ -97,10 +97,10 @@
   .tab  {
   > header  {
     display: flex;
-    > span  {
+    > button  {
       box-sizing: border-box;
       background-color: #FFF;
-      padding: 2px 15px;
+      padding: 10px 15px;
     }
   }
 }
@@ -137,7 +137,7 @@
     gap: 0px;
     > button {
       flex: 1;
-      padding: 10px 20px;
+      padding: 10px 10px;
       border-radius: 0px 15px 0px 0px;
       border: none;
       outline: none;

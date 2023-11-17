@@ -27,8 +27,8 @@
       font-size: 34px;
       font-style: normal;
       font-weight: 700;
-      line-height: 42px; /* 123.529% */
       text-transform: capitalize;
+      text-align: center;
     }
     > p {
       width: 100%;
@@ -37,7 +37,6 @@
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
-      line-height: 37.535px; /* 156.395% */
       font-variant: small-caps;
     }
   }
@@ -46,16 +45,16 @@
 @media screen and (max-width:560px) {
 .card {
   padding: 14px 14px;
-  gap: 17px;
+  gap: 30px;
 
   &__image {
     height: 366px;
   }
   &__content {
-    gap: 8px;
+    gap: 20px;
     > span {
       font-size: 30px;
-      line-height: 31px;
+
     }
     > p {
       font-size: 20px;
@@ -70,19 +69,17 @@
 @media screen and (max-width:440px) {
 .card {
   padding: 5px 6px;
-  gap: 6px;
-
   &__image {
     height: 145px;
   }
   &__content {
     > span {
       font-size: 20px;
-      line-height: 12px;
+
     }
     > p {
-      font-size: 12px;
-      line-height: 11px;
+      font-size: 18px;
+
 
     }
   }

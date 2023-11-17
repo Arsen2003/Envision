@@ -79,7 +79,7 @@
       }
     }
     > nav {
-      gap: 40px;
+      gap: 20px;
       > ul {
         gap: 23px;
         > li {
@@ -116,15 +116,15 @@
     }
     > nav {
       align-items: center;
-      gap: 30px;
+      gap: 15px;
       > ul {
-        gap: 20px;
+        gap: 10px;
         > li {
-          gap: 10px;
+          gap: 5px;
           width: 100%;
           display: flex;
 
-          > img {
+          > svg {
             height: 19px;
             width: 19px;
           }
@@ -137,7 +137,7 @@
   }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 630px) {
   .footer {
     padding: 10px 0px;
   }
@@ -167,12 +167,13 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          gap: 2px;
           > img {
             display: none;
             height: 19px;
             width: 19px;
           }
-      
+
 
           > a {
             font-size: 24px;
@@ -181,7 +182,7 @@
       }
       & > :last-child {
         > li > a {
-          font-size: 22px;
+          font-size: 18px;
           font-style: normal;
           font-weight: 800;
           line-height: normal;

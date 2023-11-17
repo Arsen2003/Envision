@@ -59,9 +59,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    > div {
-      display: flex;
-      gap: 10px;
+    gap: 10px;
       > a {
       display: flex;
       align-items: center;
@@ -79,6 +77,58 @@
         height: 28px;
       }
     }
+    > button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      font-family: 'Jura';
+      font-size: 22px;
+      cursor: pointer;
+      > img {
+        margin-top: 4px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  > form {
+    margin-top: 15px;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    > label {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 5px;
+      > input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+      }
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button
+      {
+          -webkit-appearance: none;
+      }
+      input[type='number'],
+      input[type="number"]:hover,
+      input[type="number"]:focus {
+      appearance: none;
+      -moz-appearance: textfield;
+}
+      > span {
+        margin-left: 15px;
+        font-family: 'Jura';
+      }
     }
   }
 }
@@ -89,49 +139,47 @@
 
 
 @media screen and (max-width:770px) {
-.card {
-  padding: 15px;
-
-  &_top {
-    &__title {
-      display: flex;
-      width: 100%;
-      gap: 10px;
-      > h3 {
-      font-size: 22px;
-      }
-      > span {
-        padding: 6px;
+  .card {
+    padding: 15px;
+    &_top {
+      &__title {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        > h3 {
+        font-size: 22px;
+        }
+        > span {
+          padding: 6px;
+        }
       }
     }
-  }
-  > p {
-    margin-top: 10px;
-    width: 100%;
-    color: #000;
-    font-family: 'Jura';
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 160%; /* 25.6px */
-  }
-  > address {
-    margin-top: 22px;
-    width: 100%;
-    display: flex;
-     gap: 10px;
-    > div {
+    > p {
+      margin-top: 10px;
+      width: 100%;
+      color: #000;
+      font-family: 'Jura';
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 160%; /* 25.6px */
+    }
+    > address {
+      margin-top: 22px;
+      width: 100%;
+      display: flex;
       gap: 10px;
       > a {
-      font-size: 12px;
-      > img {
-        width: 23px;
-        height: 23px;
+        font-size: 12px;
+        text-decoration: none;
+        color: #012454;
+        > img {
+          width: 23px;
+          height: 23px;
+        }
       }
     }
-    }
   }
-}
 }
 
 @media screen and (max-width:540px) {
@@ -141,24 +189,20 @@
     &__title {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       width: 100%;
-      gap: 10px;
+      gap: 5px;
       > h3 {
       font-size: 22px;
       }
       > span {
-        padding: 6px;
+        padding: 0px;
         background: none;
       }
     }
   }
   > address {
     display: flex;
-    flex-direction: column-reverse;
-    > div {
-      width: 100%;
-      justify-content: space-around;
-      gap: 10px;
       > a {
       font-size: 12px;
       > img {
@@ -169,4 +213,20 @@
     }
   }
 }
+
+
+.active {
+  > address {
+    > button {
+      > img {
+        transform:rotate(90deg);
+      }
+    }
+  }
+  > form {
+    display: flex;
+  }
 }
+
+
+
