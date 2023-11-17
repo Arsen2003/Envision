@@ -6,7 +6,22 @@ body {
   background: #DBEFFF;
   overflow-x: hidden;
   position: relative;
+  font-family:'Jura'
 }
+
+body {
+  font-family:"Jura", "Raleway","Days", "San-Francisco-Pro", Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family:  "Jura","Raleway","San-Francisco-Pro", Arial, sans-serif;
+}
+
+p {
+  font-family:"Jura", "Raleway","Days", "San-Francisco-Pro", Arial, sans-serif;
+}
+
+
 
 * {
   padding: 0px;

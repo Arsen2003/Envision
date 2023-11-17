@@ -3,7 +3,7 @@ import styles from './EventsCard.module.scss'
 import Cbutton from '../../UI/Cbutton/Cbutton'
 import TimerIcon from '../../assets/icons/timer-icon.svg'
 import GeolocationIcon from '../../assets/icons/geolocation-icon.svg'
-import { useNavigate } from 'react-router-dom'
+
 
 const formatDateTime = (dateTime) => {
   const options = {

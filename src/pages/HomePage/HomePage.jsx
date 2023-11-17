@@ -25,7 +25,6 @@
   const [newslist, setNewsList] = useState([])
   const [faqList,setFaqList] = useState([])
   const [isAnimated, setIsAnimated] = useState(false)
-
     const handleScroll = () => {
       setIsAnimated(true)
     }
@@ -92,7 +91,7 @@
     return (
       <main className={styles.main}>
         <Helmet>
-          <title>Заголовок вашей страницы</title>
+          <title>ENVISION</title>
           <meta name="description" content="Описание вашей страницы" />
           <meta
             name="keywords"

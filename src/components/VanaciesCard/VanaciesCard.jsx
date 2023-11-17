@@ -11,7 +11,7 @@
       full_name: '',
       years_of_experience: '',
       email: '',
-      phone_number: "+996705560060",
+      phone_number: "",
       vacancy: id,
     })
 
@@ -33,17 +33,16 @@
         })
 
         if (!response.ok) {
-          console.log(response)
+
           throw new Error(response)
         }
 
         const data = await response.json()
 
-        console.log('Job application submitted successfully:', data)
         setActiveCard(!activeCard)
       } catch (error) {
         console.error('Error submitting job application:')
-        console.log(error)
+
       }
     }
 
@@ -108,7 +107,7 @@
             <input
               onChange={(e) => handleInputChange(e, 'phone_number')}
               value={jobForm.phone_number}
-              placeholder="+996228228"
+              placeholder="+996707228228"
               type="text"
             />
           </label>
