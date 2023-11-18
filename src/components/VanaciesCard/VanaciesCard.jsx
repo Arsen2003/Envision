@@ -108,7 +108,7 @@
               onChange={(e) => handleInputChange(e, 'phone_number')}
               value={jobForm.phone_number}
               placeholder="+996707228228"
-              type="text"
+              type="number"
             />
           </label>
           <Cbutton type="submit">Откликнуться</Cbutton>

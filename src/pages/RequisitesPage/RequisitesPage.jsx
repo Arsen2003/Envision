@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './RequisitesPage.module.scss'
 import mbankImage from '../../assets/images/mbank-image.png'
 import qrImage from '../../assets/images/QR-image.png'
+
+  
 const RequisitesPage = () => {
   return (
     <main className={styles.main}>

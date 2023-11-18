@@ -2,11 +2,12 @@ import React, { useState, useEffect, useLayoutEffect } from 'react'
 import styles from './PortfolioPage.module.scss'
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard'
 import portfolioImage from '../../assets/images/portfolio-about-image.png'
+import { Bars } from 'react-loader-spinner'
 import {API} from '../../api/index'
 
 const PortfolioPape = () => {
 const [portfolioList,setPortfolioList] = useState([])
-
+const [loading,setLoading] = useState(false)
 useEffect(() => {
 function fetchData() {
   fetch(`${API}/portfolio-items/`)
@@ -18,9 +19,11 @@ function fetchData() {
     })
     .then((data) => {
       setPortfolioList(data)
+      setLoading(false)
     })
     .catch((error) => {
       console.error('Error fetching data:', error)
+      setLoading(false)
     })
 }
 fetchData();
@@ -49,14 +52,28 @@ fetchData();
           <div className={styles.portfolio__content}>
             <h3>Портфолио</h3>
             <div className={styles.portfolio__list}>
-              {portfolioList.map((item) => (
+
+              {
+                loading ? (
+                    <Bars
+                    height="100"
+                    width="100"
+                    color="white"
+                    ariaLabel="bars-loading"
+                    wrapperClass={styles.loading}
+                    visible={true}
+                  />
+                ) : (
+                portfolioList.map((item) => (
                 <PortfolioCard
                   key={item.id}
                   title={item.title}
                   text={item.text}
                   image={item.image}
                 />
-              ))}
+                 ))
+                )
+              }
             </div>
           </div>
         </div>
