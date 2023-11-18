@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './CMbutton.module.scss'
-const CMbutton = ({children}) => {
+const CMbutton = ({children,onClick}) => {
   return (
-    <button className={styles.button}>
+    <button onClick={onClick} className={styles.button}>
       <span>{children}</span>
     </button>
   )

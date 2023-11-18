@@ -7,7 +7,6 @@
   import contentIcon2 from '../../assets/icons/content-icon-2.svg'
   import heroAboutImage from '../../assets/images/hero-about-image.png'
   import CMbutton from '../../UI/CMbutton/CMbutton';
-  import Cbutton from '../../UI/Cbutton/Cbutton';
   import resultImage1 from '../../assets/images/results-about-1-image.png'
   import resultImage2 from '../../assets/images/results-about-2-image.png'
   import resultImage3 from '../../assets/images/results-about-3-image.png'
@@ -16,8 +15,8 @@
   import FAQaccardion from '../../components/FAQaccardeon/FAQaccardion';
   import AOS from 'aos'
   import 'aos/dist/aos.css'
-
   import { API } from '../../api/index.js'
+  import { useNavigate } from 'react-router-dom';
 
 
   const HomePage = () => {
@@ -25,6 +24,7 @@
   const [newslist, setNewsList] = useState([])
   const [faqList,setFaqList] = useState([])
   const [isAnimated, setIsAnimated] = useState(false)
+  const navigate = useNavigate()
     const handleScroll = () => {
       setIsAnimated(true)
     }
@@ -76,7 +76,7 @@
     useEffect(() => {
       const handleResize = () => {
         if (window.innerWidth <= 460) {
-          AOS.refresh() // обновляем AOS
+          AOS.refresh()
         }
       }
 
@@ -107,7 +107,12 @@
                   <br /> право быть окруженным
                   <br /> <span>теплом</span> и <span>добротой!</span>
                 </h1>
-                <CMbutton data-aos="fade-right">Хочу помочь</CMbutton>
+                <CMbutton
+                  onClick={() => navigate('/requisites')}
+                  data-aos="fade-right"
+                >
+                  Хочу помочь
+                </CMbutton>
               </div>
               <img
                 data-aos="fade-left"
