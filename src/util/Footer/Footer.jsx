@@ -13,7 +13,8 @@ const Footer = () => {
     >
       <div className="container">
         <div className={styles.content}>
-          <Link>
+          <Link to="/"
+          >
             <img src={logoIcon} alt="logo-image" />
           </Link>
           <nav>
@@ -33,7 +34,7 @@ const Footer = () => {
                 <Link to="/">FAQ</Link>
               </li>
               <li>
-                <Link>Реквизиты</Link>
+                <Link to="/requisites">Реквизиты</Link>
               </li>
               <li>
                 <Link to="/vacancies">Вакансии</Link>
@@ -88,8 +89,8 @@ const Footer = () => {
                     fill="#064376"
                   />
                 </svg>
-                <a target="_blank" href="cf.envision.bishkek@gmail.com">
-                cf.envision.bishkek@gmail.com
+                <a target="_blank" href="mailto:cf.envision.bishkek@gmail.com">
+                  cf.envision.bishkek@gmail.com
                 </a>
               </li>
             </ul>
